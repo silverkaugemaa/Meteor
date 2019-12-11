@@ -1,0 +1,61 @@
+<head>
+  <title>simple-todos</title>
+  <script>
+  function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  
+  return i;
+}</script>
+</head>
+
+<body onload="startTime()">
+   <center>
+     <h1>Hello World</h1>
+
+  {{> hello}}
+  <br>
+  <br>
+  {{> color}}
+  <br>
+ 
+  <p>Clock in realtime:</p>
+  <div id="txt">
+    
+  </div>
+  <p>Visit my <a href="https://github.com/silverkaugemaa"  target="_blank">github</a></p>
+  </center>
+  </body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+
+<template name="color">
+<button onclick="color()" >Click Me</button>
+<p>change background color</p>
+<script>
+function color() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+console.log(bgColor);
+
+  document.body.style.background = bgColor;
+  }
+</script>
+
+</template>
+

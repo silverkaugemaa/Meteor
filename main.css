@@ -1,0 +1,11 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+div {
+  border-radius: 25px;
+  border: 5px solid #73AD21;
+  padding: 5px;
+  width: 100px;
+  height: 15px;
+}
